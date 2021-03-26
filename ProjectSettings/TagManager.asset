@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Rooms
+  - SpawnPoint
+  - Background
+  - Wall
+  - Obsticle
+  - Enemy
+  - AttackDirection
+  - AttackReady
+  - EnemyMele
+  - HPBAR
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Background
+  - Player
+  - Obsticle
+  - Wall
+  - Wall
+  - Enemy
+  - EnemyMele
+  - HPBAR
+  - 
+  - 
+  - 
+  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Layer 1
+    uniqueID: 2425651459
+    locked: 0
+  - name: Layer 2
+    uniqueID: 4250941897
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4189426099
+    locked: 0
+  - name: Layer 9
+    uniqueID: 1788597031
+    locked: 0
+  - name: HPBAR
+    uniqueID: 377694301
+    locked: 0
+  - name: Layer 12
+    uniqueID: 349160037
+    locked: 0
+  - name: Layer 10
+    uniqueID: 1813201581
+    locked: 0
+  - name: Layer 11
+    uniqueID: 1975105819
+    locked: 0
+  - name: Layer 8
+    uniqueID: 3977224355
+    locked: 0
