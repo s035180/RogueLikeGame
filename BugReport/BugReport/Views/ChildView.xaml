@@ -1,0 +1,114 @@
+﻿<Window x:Class="BugReport.Views.ChildView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BugReport.Views"
+        mc:Ignorable="d"
+        Title="ChildView" Height="600" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="3"
+                   Margin="4" 
+                   HorizontalAlignment="Center"
+                   Style="{StaticResource Header1}">Advice to improve the game</TextBlock>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Margin="4"
+                   HorizontalAlignment="Left">Game Revision:</TextBlock>
+
+        <ComboBox Grid.Row="5"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  HorizontalAlignment="Left"
+                  x:Name="Revision"
+                  SelectedValue="{Binding Path=SelectedRevision, Mode=OneWay}"
+                  SelectedItem="{Binding Path=SelectedRevision, Mode=OneWayToSource}"
+                  Width="150"></ComboBox>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Margin="4"
+                   HorizontalAlignment="Left">Description:</TextBlock>
+
+        <TextBox Grid.Column="1" 
+                 Grid.Row="8" 
+                 Grid.ColumnSpan="2"
+                 Margin="4" 
+                 Height="100"
+                 x:Name="AdviceDescription"
+                 HorizontalAlignment="Left"  
+                 Width="150"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Visible"/>
+
+        <Button Grid.Row="10" 
+                Grid.Column="4" 
+                Margin="10"
+                x:Name="Return"
+                Template="{StaticResource roundbutton}" 
+                Width="65" 
+                Height="65">Return</Button>
+
+        <Button Grid.Row="10" 
+                Grid.Column="5" 
+                Margin="10"
+                x:Name="Save"
+                Template="{StaticResource roundbutton}" 
+                Width="65" 
+                Height="65">Save</Button>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="3"
+                   Grid.ColumnSpan="2"
+                   Margin="4"
+                   Text="Game Mark:"
+                   HorizontalAlignment="Right"></TextBlock>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="5"
+                   Margin="4"
+                   Text="{Binding Path=Mark, Mode=OneWay}"
+                   HorizontalAlignment="Left"></TextBlock>
+
+        <Slider Grid.Row="8"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Width="100"
+                Maximum="10"
+                Minimum="0"
+                x:Name="Mark"
+                HorizontalAlignment="Right"></Slider>
+    </Grid>
+</Window>
