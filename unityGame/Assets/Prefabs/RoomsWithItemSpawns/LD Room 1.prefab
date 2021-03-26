@@ -408,9 +408,18 @@ MonoBehaviour:
   maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
-  level2: []
-  level3: []
-  level4: []
+  level2:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  level3:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  level4:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
 --- !u!1 &4031607416098860677
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,9 +1006,18 @@ MonoBehaviour:
   maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
-  level2: []
-  level3: []
-  level4: []
+  level2:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  level3:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  level4:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
 --- !u!1 &5689337293900348398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,9 +1065,18 @@ MonoBehaviour:
   maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
-  level2: []
-  level3: []
-  level4: []
+  level2:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  level3:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  level4:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
 --- !u!1 &5918629374930888724
 GameObject:
   m_ObjectHideFlags: 0

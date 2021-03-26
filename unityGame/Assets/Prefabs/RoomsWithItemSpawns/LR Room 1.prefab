@@ -1775,7 +1775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8635851586627647909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.8, y: -2, z: 0}
+  m_LocalPosition: {x: -5.95, y: -5.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6410321801836937797}
@@ -1797,6 +1797,15 @@ MonoBehaviour:
   maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
-  level2: []
-  level3: []
-  level4: []
+  level2:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  level3:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  level4:
+  - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
+  - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
+  - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
+  - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}

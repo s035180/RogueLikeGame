@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1083648693
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7419593473033909056, guid: f907cecdac9231744812b4466bfcae23,
     type: 3}
@@ -132,12 +132,14 @@ MonoBehaviour:
   curHp: 7
   maxHp: 7
   coins: 0
-  hasKey: 0
   sr: {fileID: 7724815010132467662}
+  moveSpeed: 5
+  rb: {fileID: 0}
   animator: {fileID: 0}
   moveLayerMask:
     serializedVersion: 2
     m_Bits: 768
+  slider: {fileID: 0}
 --- !u!50 &1813402551715916912
 Rigidbody2D:
   serializedVersion: 4

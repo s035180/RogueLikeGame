@@ -27,12 +27,18 @@ public class Player : MonoBehaviour
         if(curHp < 0)
         {
             animator.SetBool("death", true);
+            /* Vitalij Gurin */
+            FindObjectOfType<GameManager>().EndGame();
         }
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
-            animator.SetFloat("Speed", movement.sqrMagnitude);
+        else if(GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("EnemyMele").Length == 0)
+        {
+            FindObjectOfType<GameManager>().LoadNewLevel();
+        }
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     void FixedUpdate()
@@ -51,12 +57,6 @@ public class Player : MonoBehaviour
         }
         else slider.value = curHp;
     }
-    public void animationEnded()
-    {
-        Destroy(gameObject);
-    }
 
-
-    // called when we want to move in a certain direction
 
 }
