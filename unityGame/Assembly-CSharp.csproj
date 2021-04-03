@@ -82,6 +82,9 @@
     <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\RoomTempletes.cs" />
+    <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\SetValues.cs" />
+    <Compile Include="Assets\Scripts\StaticData.cs" />
     <Compile Include="Assets\Scripts\TestMeleEnemy.cs" />
     <None Include="Assets\Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
     <None Include="Assets\Assets\Cainos\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow.shader" />

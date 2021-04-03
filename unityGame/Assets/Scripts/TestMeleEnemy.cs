@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TestMeleEnemy : MonoBehaviour
 {
-    public float speed;
+    float speed;
     private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject projectile;
     public Animator action;
-    public float health;
-    public int damage;
+    float health;
+    int damage;
 
     
 
@@ -27,6 +27,9 @@ public class TestMeleEnemy : MonoBehaviour
     private State state;
     void Start()
     {
+        speed = StaticData.MeleeSpeed;
+        health = StaticData.MeleeHP;
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         Vector3 position = transform.position;
@@ -112,8 +115,8 @@ public class TestMeleEnemy : MonoBehaviour
     }
     public void animationEnded()
     {
+        StaticData.Score += 20;
         Destroy(gameObject);
     }
-
 
 }

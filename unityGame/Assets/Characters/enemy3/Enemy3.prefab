@@ -168,6 +168,6 @@ MonoBehaviour:
   projectile: {fileID: 2326585206204705824, guid: 8a94462b32edd8949a0e70fa9dd82f7b,
     type: 3}
   action: {fileID: 6852209839645680727}
-  health: 150
+  health: 100
   damage: 20
   player: {fileID: 0}

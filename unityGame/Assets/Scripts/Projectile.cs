@@ -14,17 +14,24 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (mele)
+        {
+            damage = StaticData.MeleeDamage;
+        }
+        else
+        {
+            damage = StaticData.RangeDamage;
+        }
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mele == true)
+        if (mele)
         {
             if(transform.position.x > target.x - 2 && transform.position.x < target.x + 2 && transform.position.y > target.y - 2 && transform.position.y < target.y + 2)
             {

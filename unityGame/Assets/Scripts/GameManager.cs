@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     void NewLevel()
     {
+        StaticData.Score += 1000;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
