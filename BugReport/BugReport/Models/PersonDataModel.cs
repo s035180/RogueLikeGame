@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace BugReport.Models
         public string ProblemTitle { get; set; }
         public string Description { get; set; }
 
-        public List<string> Images = new List<string>();
+        public BindableCollection<string> Images = new BindableCollection<string>();
 
         private static PersonDataModel _person;
 

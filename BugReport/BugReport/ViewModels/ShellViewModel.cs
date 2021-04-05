@@ -10,6 +10,9 @@ using System.Text.RegularExpressions;
 using System.Net.Mail;
 using System.Text;
 using System.Net;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace BugReport.ViewModels
 {
@@ -18,6 +21,10 @@ namespace BugReport.ViewModels
         private PersonDataModel _person { get; set; }
         private string _title = "RogueLikeGame";
         private string _name = "Bug Report";
+        private BindableCollection<string> _listOfPhoto = new BindableCollection<string>();
+        private string selectedValue;
+        private AdviceModel _advice = new AdviceModel();
+
 
         public ShellViewModel()
         {
@@ -223,66 +230,95 @@ namespace BugReport.ViewModels
             {
                 foreach (string filename in openFileDialog.FileNames)
                 {
-                    _person.Images.Add(Path.GetFileName(filename));
+                    _person.Images.Add(filename);
+                    _listOfPhoto.Add(Path.GetFileName(filename));
                     NotifyOfPropertyChange(() => Images);
+                    NotifyOfPropertyChange(() => ListOfPhoto);
+
                 }
             }
         }
+        public void DeleteImage(BindableCollection<string> ListOfPhoto)
+        {
+            _person.Images.Remove(selectedValue);
+            NotifyOfPropertyChange(() => Images);
+        }
+        public string SelectedPhoto
+        {
+            set
+            {
+                    selectedValue = value;
+            }
+        }
+        public bool CanDeleteImage(BindableCollection<string> ListOfPhoto)
+        {
+            if (_person.Images.Count > 0  && !String.IsNullOrWhiteSpace(selectedValue))
+            {
+               
+                    return true;
+            }
+            else
+                return false;
+        }
+
+        public BindableCollection<string> ListOfPhoto
+        {
+            get 
+            { 
+                return _person.Images;
+            }
+            set
+            {
+                _listOfPhoto = value;
+            }
+        }
+
+
+
 
         public void SendReport(string firstname, string lastname, string email, string problemTitle, string description)
         {
             try
             {
                 MailMessage mail = new MailMessage();
-                //put your SMTP address and port here.
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                //Put the email address
                 mail.From = new MailAddress("noskoruslan1999@gmail.com");
-                //Put the email where you want to send.
                 mail.To.Add("gh7891gh@gmail.com");
-
-                mail.Subject = "CheckoutPOS Exception Log";
-
+                mail.Subject = _person.ProblemTitle;
+                _advice = AdviceModel.returnAdvice();
                 StringBuilder sbBody = new StringBuilder();
-
-                sbBody.AppendLine("Hi Dev Team,");
-
-                sbBody.AppendLine("Something went wrong with CheckoutPOS");
-
-                sbBody.AppendLine("Here is the error log:");
-
-                sbBody.AppendLine("Exception: Object reference not set to an instance of an object....");
-
-                sbBody.AppendLine("Thanks,");
-
+                sbBody.AppendLine("Name: " + _person.FirstName);
+                sbBody.AppendLine("Surname: " + _person.LastName);
+                sbBody.AppendLine("Email: " + _person.Email);
+                sbBody.AppendLine("Description: " + _person.Description);
+                if(_advice != null)
+                {
+                    sbBody.AppendLine("Game Advice");
+                    sbBody.AppendLine("Game Revision: " + _advice.Header);
+                    sbBody.AppendLine("Game Rate: " + _advice.Rate);
+                    sbBody.AppendLine("Advice Description: " + _advice.Description);
+                }
+                System.Net.Mail.Attachment attachment;
+                if (_person.Images != null)
+                {
+                    foreach (string photo in _person.Images)
+                    {
+                        attachment = new System.Net.Mail.Attachment(photo);
+                        mail.Attachments.Add(attachment);
+                    }
+                }
                 mail.Body = sbBody.ToString();
-
-                //Your log file path
-                //System.Net.Mail.Attachment attachment = new System.Net.Mail.Attachment(@"C:\Logs\CheckoutPOS.log");
-
-                //mail.Attachments.Add(attachment);
-
-                //Your username and password!
-                SmtpServer.Port = 25;
+                SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("noskoruslan1999@gmail.com", "2447892asd");
                 SmtpServer.EnableSsl = true;
-                //SmtpServer.EnableSsl = true;
-
                 SmtpServer.Send(mail);
-                //MessageBox.Show("The exception has been sent! :)");
+                MessageBox.Show("Report have been sent");
 
-                /*var smtpClient = new SmtpClient("smtp.gmail.com")
-                {
-                    Port = 587,
-                    Credentials = new NetworkCredential("noskoruslan1999@gmail.com", "2447892asd"),
-                    EnableSsl = true,
-                };
-
-                smtpClient.Send("noskoruslan1999@gmail.com", "gh7891gh@gmail.com", "subject", "body");*/
             }
-            catch (Exception ex)
+            catch (SmtpException ex)
             {
-                Console.WriteLine(ex.ToString());
+                throw new ApplicationException
+                  ("SmtpException has occured: " + ex.Message);
             }
         }
 
