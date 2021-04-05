@@ -50,10 +50,10 @@ MonoBehaviour:
   - {fileID: 3248243676430489912, guid: b4083c449499b484da95b81557d73bfa, type: 3}
   - {fileID: 3755069253307234515, guid: 5f6862c7a298b4048ae73c412a949f75, type: 3}
   - {fileID: 4580776059974723596, guid: 9cbb253d04f19f24db091524035f52f3, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
 --- !u!1 &555156440055301828
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,10 +202,10 @@ MonoBehaviour:
   - {fileID: 3248243676430489912, guid: b4083c449499b484da95b81557d73bfa, type: 3}
   - {fileID: 3755069253307234515, guid: 5f6862c7a298b4048ae73c412a949f75, type: 3}
   - {fileID: 4580776059974723596, guid: 9cbb253d04f19f24db091524035f52f3, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
 --- !u!1 &651429975002311789
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,10 +607,10 @@ MonoBehaviour:
   - {fileID: 3248243676430489912, guid: b4083c449499b484da95b81557d73bfa, type: 3}
   - {fileID: 3755069253307234515, guid: 5f6862c7a298b4048ae73c412a949f75, type: 3}
   - {fileID: 4580776059974723596, guid: 9cbb253d04f19f24db091524035f52f3, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
 --- !u!1 &1914314426060700021
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,10 +661,10 @@ MonoBehaviour:
   - {fileID: 3248243676430489912, guid: b4083c449499b484da95b81557d73bfa, type: 3}
   - {fileID: 3755069253307234515, guid: 5f6862c7a298b4048ae73c412a949f75, type: 3}
   - {fileID: 4580776059974723596, guid: 9cbb253d04f19f24db091524035f52f3, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
 --- !u!1 &2274890469269523790
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,10 +860,10 @@ MonoBehaviour:
   - {fileID: 3248243676430489912, guid: b4083c449499b484da95b81557d73bfa, type: 3}
   - {fileID: 3755069253307234515, guid: 5f6862c7a298b4048ae73c412a949f75, type: 3}
   - {fileID: 4580776059974723596, guid: 9cbb253d04f19f24db091524035f52f3, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
 --- !u!1 &2828691330043784309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,10 +1275,10 @@ MonoBehaviour:
   - {fileID: 3248243676430489912, guid: b4083c449499b484da95b81557d73bfa, type: 3}
   - {fileID: 3755069253307234515, guid: 5f6862c7a298b4048ae73c412a949f75, type: 3}
   - {fileID: 4580776059974723596, guid: 9cbb253d04f19f24db091524035f52f3, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
-  - {fileID: 5807757027540052756, guid: 76901d4fbc99f094cb8ebc3b4bb70125, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
+  - {fileID: 5807757027540052756, guid: 8ae24ad4afa72d448af95b7ff7b8ae2f, type: 3}
 --- !u!1 &4150946833443843394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,8 +1430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad442edb4c1aa43bd7b208d552013c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minEnemies: 10
-  maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
   level2:
@@ -1446,6 +1444,7 @@ MonoBehaviour:
   - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
   - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
   - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
+  enemySpawned: 0
 --- !u!1 &4946889988473280442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,8 +1764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad442edb4c1aa43bd7b208d552013c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minEnemies: 10
-  maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
   level2:
@@ -1781,6 +1778,7 @@ MonoBehaviour:
   - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
   - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
   - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
+  enemySpawned: 0
 --- !u!1 &8132038154700293056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,8 +1822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad442edb4c1aa43bd7b208d552013c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minEnemies: 10
-  maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
   level2:
@@ -1840,6 +1836,7 @@ MonoBehaviour:
   - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
   - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
   - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
+  enemySpawned: 0
 --- !u!1 &8268333949928813248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,8 +1880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad442edb4c1aa43bd7b208d552013c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minEnemies: 10
-  maxEnemies: 10
   level1:
   - {fileID: 8191688666609000019, guid: 84e17114e3999ec499a800946a0c3af5, type: 3}
   level2:
@@ -1899,6 +1894,7 @@ MonoBehaviour:
   - {fileID: 3366803542377127880, guid: c7c35d0dbe88a064692ba779eefd008d, type: 3}
   - {fileID: 8345117838562229356, guid: 2802595d47e29484197055a46607643f, type: 3}
   - {fileID: 6027629388721899737, guid: 23001ab4c01d5ea4a9f772fb8a4e4f75, type: 3}
+  enemySpawned: 0
 --- !u!1 &8287244157492235697
 GameObject:
   m_ObjectHideFlags: 0

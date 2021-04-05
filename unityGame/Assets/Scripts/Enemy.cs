@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
-    public float speed;
+
+    float speed;
     public float stoppingDistance;
     public float retreatDistance;
     public Transform player;
     private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject projectile;
-    public int health  = 100;
+    float health;
     public float visionDistance = 20f;
     public Animator action;
-    public int damage;
+    int damage;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        speed = StaticData.RangeSpeed;
+        health = StaticData.RangeHP;
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         Vector3 position = transform.position;
@@ -69,6 +72,7 @@ public class Enemy : MonoBehaviour
     }
     public void animationEnded2()
     {
+        StaticData.Score += 35;
         Destroy(gameObject);
     }
     public int getDmg()

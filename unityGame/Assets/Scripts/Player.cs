@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
             /* Vitalij Gurin */
             FindObjectOfType<GameManager>().EndGame();
         }
-        else if(GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("EnemyMele").Length == 0)
+        else if(GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("EnemyMele").Length == 0 &&
+                FindObjectOfType<EnemySpawn>().enemySpawned)
         {
             FindObjectOfType<GameManager>().LoadNewLevel();
         }

@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be23cd4b9f675074caafd0816b8c26c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   startTimeBtwShots: 2
   projectile: {fileID: 2326585206204705824, guid: 8a94462b32edd8949a0e70fa9dd82f7b,
     type: 3}
   action: {fileID: 9015987676837294813}
-  health: 200
-  damage: 20
+  health: 80
+  damage: 40
   player: {fileID: 0}

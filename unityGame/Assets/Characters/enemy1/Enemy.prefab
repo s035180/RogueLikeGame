@@ -97,17 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265a7c30c2dd8944eb664b9409f6ec50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   stoppingDistance: 15
   retreatDistance: 10
   player: {fileID: 0}
   startTimeBtwShots: 2
   projectile: {fileID: 7419924876876676616, guid: 6946df9bc65d3ea4493a697e41c9fe78,
     type: 3}
-  health: 100
-  visionDistance: 20
+  visionDistance: 50
   action: {fileID: 1656530380}
-  damage: 100
 --- !u!61 &3366803542377127884
 BoxCollider2D:
   m_ObjectHideFlags: 0

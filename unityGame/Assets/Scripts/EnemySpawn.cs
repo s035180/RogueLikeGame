@@ -7,11 +7,12 @@ public class EnemySpawn : MonoBehaviour
 {
     // Start is called before the first frame update
     int minEnemies = 1;
-    int maxEnemies = 100;
+    int maxEnemies = 1000;
     public GameObject[] level1;
     public GameObject[] level2;
     public GameObject[] level3;
     public GameObject[] level4;
+    public bool enemySpawned = false;
     private void Start()
     {
         int rand2 = Random.Range(minEnemies, maxEnemies);
@@ -39,5 +40,6 @@ public class EnemySpawn : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("EnemyMele").Length < rand2)
                 Instantiate(level4[rand], transform.position, Quaternion.identity);
         }
+        enemySpawned = true;
     }
 }
