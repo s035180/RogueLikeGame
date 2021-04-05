@@ -12,6 +12,7 @@ namespace BugReport.ViewModels
     {
         private AdviceModel _advice = new AdviceModel();
         private BindableCollection<string> _revision = new BindableCollection<string>();
+        private string selectedValue;
 
         private int myVar;
 
@@ -24,7 +25,7 @@ namespace BugReport.ViewModels
 
         public ChildViewModel()
         {
-            Revision.Add("Game is shit");
+            Revision.Add("Game is bad");
             Revision.Add("Game unplayable");
             Revision.Add("Game has potential");
             Revision.Add("Not bad game");
@@ -59,6 +60,7 @@ namespace BugReport.ViewModels
             set 
             {
                 _advice.Header = value;
+                selectedValue = value;
                 NotifyOfPropertyChange(() => SelectedRevision);
             }
         }
@@ -102,7 +104,7 @@ namespace BugReport.ViewModels
 
         public bool CanSave(string selectedRevision, string adviceDescription)
         {
-            if (//String.IsNullOrWhiteSpace(selectedRevision) ||
+            if (String.IsNullOrWhiteSpace(selectedValue) ||
                 String.IsNullOrWhiteSpace(adviceDescription))
             {
                 return false;
