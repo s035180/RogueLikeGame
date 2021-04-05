@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
     public void animationEnded2()
     {
         StaticData.Score += 35;
+        StaticData.Kills++;
         Destroy(gameObject);
     }
     public int getDmg()

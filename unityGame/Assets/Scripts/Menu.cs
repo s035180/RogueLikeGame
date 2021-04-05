@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+
+    public GameObject mainUI;
+    public GameObject scoreboardUI;
+    public GameObject userDataUI;
     public void endGame()
     {
         Debug.Log("QUIT");
@@ -13,6 +17,28 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("StartGame");
         SceneManager.LoadScene(1);
+    }
+
+    public void showScoreBoard()
+    {
+        Debug.Log("Scoreboard");
+        mainUI.SetActive(false);
+        scoreboardUI.SetActive(true);
+    }
+
+    public void showUserData()
+    {
+        Debug.Log("User Data");
+        mainUI.SetActive(false);
+        userDataUI.SetActive(true);
+    }
+
+    public void showMain()
+    {
+        Debug.Log("User Data");
+        userDataUI.SetActive(false);
+        scoreboardUI.SetActive(false);
+        mainUI.SetActive(true);
     }
 
     public void returnToMenu()

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "657640045026",
+    "firebase_url": "https://roguelikegame-64f8f-default-rtdb.firebaseio.com",
+    "project_id": "roguelikegame-64f8f",
+    "storage_bucket": "roguelikegame-64f8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657640045026:android:617a36f38770787ef361bb",
+        "android_client_info": {
+          "package_name": "com.Company.ProductName"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657640045026-fqtfjia04memhioj67333l9nr4ieu68k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0vOhj3mv2T5jhJ_i1mjUZbHsjIzE1uaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657640045026-fqtfjia04memhioj67333l9nr4ieu68k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

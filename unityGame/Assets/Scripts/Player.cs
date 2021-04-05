@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     {
         if(curHp < 0)
         {
+            StaticData.Deaths++;
             animator.SetBool("death", true);
             /* Vitalij Gurin */
             FindObjectOfType<GameManager>().EndGame();

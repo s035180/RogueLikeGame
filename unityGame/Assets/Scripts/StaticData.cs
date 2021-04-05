@@ -11,6 +11,8 @@ public static class StaticData
     private static int _rangeDamage;
 
     private static int _score;
+    private static int _kills;
+    private static int _deaths;
 
     public static int Score
     {
@@ -18,6 +20,17 @@ public static class StaticData
         set { _score = value; }
     }
 
+    public static int Kills
+    {
+        get { return _kills; }
+        set { _kills = value; }
+    }
+
+    public static int Deaths
+    {
+        get { return _deaths; }
+        set { _deaths = value; }
+    }
 
     public static float MeleeSpeed
     {

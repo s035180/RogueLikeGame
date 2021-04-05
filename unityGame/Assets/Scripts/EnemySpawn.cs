@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class EnemySpawn : MonoBehaviour
 {
     // Start is called before the first frame update
-    int minEnemies = 1;
-    int maxEnemies = 1000;
+    int minEnemies = 0;
+    int maxEnemies = 0;
     public GameObject[] level1;
     public GameObject[] level2;
     public GameObject[] level3;

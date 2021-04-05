@@ -13,7 +13,6 @@ public class SetValues : MonoBehaviour
         StaticData.RangeDamage = 30;
         StaticData.RangeHP = 50;
         StaticData.RangeSpeed = 2f;
-        StaticData.Score = 0;
     }
 }
 

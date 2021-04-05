@@ -116,6 +116,7 @@ public class TestMeleEnemy : MonoBehaviour
     public void animationEnded()
     {
         StaticData.Score += 20;
+        StaticData.Kills++;
         Destroy(gameObject);
     }
 
