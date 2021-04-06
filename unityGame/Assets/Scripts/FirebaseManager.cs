@@ -6,6 +6,8 @@ using Firebase.Database;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Threading;
+using System.Linq;
+using System;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -40,8 +42,13 @@ public class FirebaseManager : MonoBehaviour
     public GameObject scoreElement;
     public Transform scoreboardContent;
 
+    string curTime;
+    
     void Awake()
     {
+        curTime = DateTime.Now.ToString();
+        curTime = curTime.Replace(@"/", "-");
+
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -53,7 +60,6 @@ public class FirebaseManager : MonoBehaviour
                 Debug.Log("Awake");
                 //StartCoroutine(UpdateScore(StaticData.Score));
                 Debug.Log("AwakeEnd");
-                StaticData.Score = 5;
             }
             else
             {
@@ -67,6 +73,9 @@ public class FirebaseManager : MonoBehaviour
         {
             Debug.Log("Update");
             StartCoroutine(UpdateScore(StaticData.Score));
+            StartCoroutine(UpdateKills(StaticData.Kills));
+            StartCoroutine(UpdateDeaths(StaticData.Deaths));
+            StartCoroutine(UpdateName(StaticData.username));
             Debug.Log("UpdateEnd");
             StaticData.Score = 0;
         }
@@ -109,6 +118,10 @@ public class FirebaseManager : MonoBehaviour
         UIManager.instance.LoginScreen();
         ClearRegisterFeilds();
         ClearLoginFeilds();
+    }
+    public void ScoreboardButton()
+    {
+        StartCoroutine(LoadScoreboardData());
     }
     private IEnumerator Login(string _email, string _password)
     {
@@ -153,6 +166,7 @@ public class FirebaseManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
+            StaticData.username = User.DisplayName.ToString();
 
             yield return new WaitForSeconds(1);
 
@@ -246,9 +260,9 @@ public class FirebaseManager : MonoBehaviour
 
     private IEnumerator UpdateScore(int _score)
     {
-        Debug.Log("UpdateScore");
+        
         //Set the currently logged in user xp
-        var DBTask = DBreference.Child("users").Child("admin").Child("score").SetValueAsync(_score);
+        var DBTask = DBreference.Child("users").Child(curTime).Child("score").SetValueAsync(_score);
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -262,10 +276,10 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateKills()
+    private IEnumerator UpdateKills(int _kills)
     {
         //Set the currently logged in user kills
-        var DBTask = DBreference.Child("users").Child(User.UserId).Child("kills").SetValueAsync(StaticData.Kills);
+        var DBTask = DBreference.Child("users").Child(curTime).Child("kills").SetValueAsync(_kills);
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -279,10 +293,10 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateDeaths()
+    private IEnumerator UpdateDeaths(int _deaths)
     {
         //Set the currently logged in user deaths
-        var DBTask = DBreference.Child("users").Child(User.UserId).Child("deaths").SetValueAsync(StaticData.Deaths);
+        var DBTask = DBreference.Child("users").Child(curTime).Child("deaths").SetValueAsync(_deaths);
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -295,4 +309,64 @@ public class FirebaseManager : MonoBehaviour
             //Deaths are now updated
         }
     }
-}
+    private IEnumerator UpdateName(string _name)
+    {
+        Debug.Log(_name + "CHEEEEEEEEEEEEEECHK");
+        //Set the currently logged in user deaths
+        var DBTask = DBreference.Child("users").Child(curTime).Child("username").SetValueAsync(_name);
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Deaths are now updated
+        }
+    }
+    private IEnumerator LoadScoreboardData()
+    {
+        Debug.Log("LoadScoreboardData");
+        //Get all the users data ordered by kills amount
+        var DBTask = DBreference.Child("users").OrderByChild("score").GetValueAsync();
+
+        
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            //Destroy any existing scoreboard elements
+            foreach (Transform child in scoreboardContent.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            //Loop through every users UID
+            foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse<DataSnapshot>())
+            {
+                string username = childSnapshot.Child("username").Value.ToString();
+                int kills = int.Parse(childSnapshot.Child("kills").Value.ToString());
+                int deaths = int.Parse(childSnapshot.Child("deaths").Value.ToString());
+                int score = int.Parse(childSnapshot.Child("score").Value.ToString());
+
+                //Instantiate new scoreboard elements
+                GameObject scoreboardElement = Instantiate(scoreElement, scoreboardContent);
+                scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(username, kills, deaths, score);
+                Debug.Log("LoadScoreboardData Complete");
+            }
+
+            //Go to scoareboard screen
+            UIManager.instance.showScoreBoard();
+        }
+    }
+    }

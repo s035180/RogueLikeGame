@@ -13,6 +13,7 @@ public static class StaticData
     private static int _score;
     private static int _kills;
     private static int _deaths;
+    private static string _username;
 
     public static int Score
     {
@@ -67,6 +68,10 @@ public static class StaticData
         get { return _rangeDamage; }
         set { _rangeDamage = value; }
     }
-
+    public static string username
+    {
+        get { return _username; }
+        set { _username = value; }
+    }
 }
         

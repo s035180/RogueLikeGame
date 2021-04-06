@@ -288,9 +288,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6}
+  m_AnchoredPosition: {x: 0, y: 6.0070524}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.50000036}
 --- !u!114 &4536215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7034,6 +7034,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1769080565}
+        m_MethodName: ScoreboardButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1235312989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9671,7 +9682,7 @@ GameObject:
   - component: {fileID: 1686654830}
   - component: {fileID: 1686654829}
   m_Layer: 0
-  m_Name: Xp
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9715,7 +9726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Xp
+  m_text: Score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10396,8 +10407,9 @@ MonoBehaviour:
   scoreField: {fileID: 0}
   killsField: {fileID: 0}
   deathsField: {fileID: 0}
-  scoreElement: {fileID: 0}
-  scoreboardContent: {fileID: 0}
+  scoreElement: {fileID: 1879445940651037232, guid: 5a61bd5d397fd70499ece1e94d0f3217,
+    type: 3}
+  scoreboardContent: {fileID: 1253624677}
 --- !u!4 &1769080566
 Transform:
   m_ObjectHideFlags: 0
