@@ -68,6 +68,7 @@
     <Compile Include="Assets\Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
     <Compile Include="Assets\Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
+    <Compile Include="Assets\Scripts\Achievements.cs" />
     <Compile Include="Assets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyLeft.cs" />
@@ -355,6 +356,9 @@
     </Reference>
     <Reference Include="Firebase.Database">
       <HintPath>D:/unitySave/unityGit/RogueLikeGame/unityGame/Library/PackageCache/com.google.firebase.database@7.1.0/Firebase/Plugins/Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Firestore">
+      <HintPath>D:/unitySave/unityGit/RogueLikeGame/unityGame/Library/PackageCache/com.google.firebase.firestore@7.1.0/Firebase/Plugins/Firebase.Firestore.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Program Files/Unity Editor/2019.4.19f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -8,15 +8,18 @@ using UnityEngine.SceneManagement;
 using System.Threading;
 using System.Linq;
 using System;
+using Firebase.Firestore;
+using System.Collections.Generic;
 
 public class FirebaseManager : MonoBehaviour
 {
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public FirebaseAuth auth;    
+    public FirebaseAuth auth;
     public FirebaseUser User;
     public DatabaseReference DBreference;
+    public FirebaseFirestore db;
 
     //Login variables
     [Header("Login")]
@@ -41,9 +44,11 @@ public class FirebaseManager : MonoBehaviour
     public TMP_InputField deathsField;
     public GameObject scoreElement;
     public Transform scoreboardContent;
+    public GameObject Achievements;
 
     string curTime;
-    
+    public List<Achievements> achivs = new List<Achievements>();
+
     void Awake()
     {
         curTime = DateTime.Now.ToString();
@@ -86,6 +91,9 @@ public class FirebaseManager : MonoBehaviour
         //Set the authentication instance object
         auth = FirebaseAuth.DefaultInstance;
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
+        //Setting reference to FIREBASE FIRESTORE
+        db = FirebaseFirestore.DefaultInstance;
+
     }
     public void ClearLoginFeilds()
     {
@@ -185,12 +193,12 @@ public class FirebaseManager : MonoBehaviour
             //If the username field is blank show a warning
             warningRegisterText.text = "Missing Username";
         }
-        else if(passwordRegisterField.text != passwordRegisterVerifyField.text)
+        else if (passwordRegisterField.text != passwordRegisterVerifyField.text)
         {
             //If the password does not match show a warning
             warningRegisterText.text = "Password Does Not Match!";
         }
-        else 
+        else
         {
             //Call the Firebase auth signin function passing the email and password
             var RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
@@ -231,7 +239,7 @@ public class FirebaseManager : MonoBehaviour
                 if (User != null)
                 {
                     //Create a user profile and set the username
-                    UserProfile profile = new UserProfile{DisplayName = _username};
+                    UserProfile profile = new UserProfile { DisplayName = _username };
 
                     //Call the Firebase auth update user profile function passing the profile with the username
                     var ProfileTask = User.UpdateUserProfileAsync(profile);
@@ -260,7 +268,7 @@ public class FirebaseManager : MonoBehaviour
 
     private IEnumerator UpdateScore(int _score)
     {
-        
+
         //Set the currently logged in user xp
         var DBTask = DBreference.Child("users").Child(curTime).Child("score").SetValueAsync(_score);
 
@@ -332,9 +340,9 @@ public class FirebaseManager : MonoBehaviour
         //Get all the users data ordered by kills amount
         var DBTask = DBreference.Child("users").OrderByChild("score").GetValueAsync();
 
-        
+
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
-        
+
 
         if (DBTask.Exception != null)
         {
@@ -369,4 +377,20 @@ public class FirebaseManager : MonoBehaviour
             UIManager.instance.showScoreBoard();
         }
     }
+    //new method that stores everything from database to ACHIEVEMENT CLASS, adding everything to ac LIST
+    public async void AchivsAsync()
+    {
+        Firebase.Firestore.Query capitalQuery = db.Collection("Achievements");
+        QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
+        foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
+        {
+            Achievements ac = new Achievements();
+            ac.achievementName = $"{documentSnapshot.Reference.Path}: {documentSnapshot.GetValue<string>("Achievement Name")}";
+            ac.achievementType = $"{documentSnapshot.Reference.Path}: {documentSnapshot.GetValue<string>("Complete Task")}";
+            ac.value = Convert.ToInt32($"{documentSnapshot.Reference.Path}: {documentSnapshot.GetValue<int>("Value")}");
+            ac.unlocked = false;
+            achivs.Add(ac);
+        }
+
     }
+}
