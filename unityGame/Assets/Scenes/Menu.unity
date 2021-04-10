@@ -4577,7 +4577,7 @@ RectTransform:
   m_Father: {fileID: 1630063659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.000000059604645, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -5312,6 +5312,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1769080565}
+        m_MethodName: UserDataButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &972834196
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5421,7 +5432,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 547483205}
   m_HandleRect: {fileID: 547483204}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10057,8 +10068,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 790888676}
   m_HandleRect: {fileID: 790888675}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10403,10 +10414,10 @@ MonoBehaviour:
   passwordRegisterField: {fileID: 1484623463}
   passwordRegisterVerifyField: {fileID: 2049681267}
   warningRegisterText: {fileID: 407530996}
-  usernameField: {fileID: 0}
-  scoreField: {fileID: 0}
-  killsField: {fileID: 0}
-  deathsField: {fileID: 0}
+  usernameField: {fileID: 1302477861}
+  scoreField: {fileID: 935969858}
+  killsField: {fileID: 2074477787}
+  deathsField: {fileID: 56877854}
   scoreElement: {fileID: 1879445940651037232, guid: 5a61bd5d397fd70499ece1e94d0f3217,
     type: 3}
   scoreboardContent: {fileID: 1253624677}

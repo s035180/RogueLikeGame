@@ -49,6 +49,8 @@ public class FirebaseManager : MonoBehaviour
     string curTime;
     public List<Achievements> achivs = new List<Achievements>();
 
+    private bool _update = true;
+
     void Awake()
     {
         curTime = DateTime.Now.ToString();
@@ -74,15 +76,16 @@ public class FirebaseManager : MonoBehaviour
     }
     void Update()
     {
-        if (StaticData.Score > 0)
+        if (StaticData.Score > 0 && _update)
         {
+            _update = false;
             Debug.Log("Update");
             StartCoroutine(UpdateScore(StaticData.Score));
             StartCoroutine(UpdateKills(StaticData.Kills));
             StartCoroutine(UpdateDeaths(StaticData.Deaths));
             StartCoroutine(UpdateName(StaticData.username));
+            StartCoroutine(UpdateMaxUserData());
             Debug.Log("UpdateEnd");
-            StaticData.Score = 0;
         }
     }
     private void InitializeFirebase()
@@ -131,6 +134,11 @@ public class FirebaseManager : MonoBehaviour
     {
         StartCoroutine(LoadScoreboardData());
     }
+
+    public void UserDataButton()
+    {
+        StartCoroutine(LoadUserData());
+    }
     private IEnumerator Login(string _email, string _password)
     {
         //Call the Firebase auth signin function passing the email and password
@@ -175,6 +183,9 @@ public class FirebaseManager : MonoBehaviour
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
             StaticData.username = User.DisplayName.ToString();
+
+            StaticData.UserID = User.UserId;
+            Debug.Log(User.UserId);
 
             yield return new WaitForSeconds(1);
 
@@ -266,6 +277,72 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
+    private IEnumerator UpdateMaxUserData()
+    {
+        Debug.Log(StaticData.UserID);
+        //Set the currently logged in user xp
+        var DBTask = DBreference.Child("achv").Child(StaticData.UserID).GetValueAsync();
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            DataSnapshot snapshot = DBTask.Result;
+
+            if (snapshot.Exists)
+            {
+
+                if (Convert.ToInt32(snapshot.Child("kills").Value) < StaticData.Kills)
+                {
+                    var DBTaskUpdKills = DBreference.Child("achv").Child(StaticData.UserID).Child("kills").SetValueAsync(StaticData.Kills);
+
+                    yield return new WaitUntil(predicate: () => DBTaskUpdKills.IsCompleted);
+                }
+
+                if (Convert.ToInt32(snapshot.Child("score").Value) < StaticData.Score)
+                {
+                    var DBTaskUpdScore = DBreference.Child("achv").Child(StaticData.UserID).Child("score").SetValueAsync(StaticData.Score);
+
+                    yield return new WaitUntil(predicate: () => DBTaskUpdScore.IsCompleted);
+                }
+
+                if (StaticData.Deaths != 0)
+                {
+                    var DBTaskUpdDeaths = DBreference.Child("achv").Child(StaticData.UserID).Child("deaths").SetValueAsync(StaticData.Deaths + Convert.ToInt32(snapshot.Child("deaths").Value));
+
+                    yield return new WaitUntil(predicate: () => DBTaskUpdDeaths.IsCompleted);
+                }
+            }
+            else
+            {
+                var DBTaskUpdKills = DBreference.Child("achv").Child(StaticData.UserID).Child("kills").SetValueAsync(StaticData.Kills);
+
+                yield return new WaitUntil(predicate: () => DBTaskUpdKills.IsCompleted);
+
+                var DBTaskUpdScore = DBreference.Child("achv").Child(StaticData.UserID).Child("score").SetValueAsync(StaticData.Score);
+
+                yield return new WaitUntil(predicate: () => DBTaskUpdScore.IsCompleted);
+
+                var DBTaskUpdDeaths = DBreference.Child("achv").Child(StaticData.UserID).Child("deaths").SetValueAsync(StaticData.Deaths);
+
+                yield return new WaitUntil(predicate: () => DBTaskUpdDeaths.IsCompleted);
+
+                var DBTaskUpdUsername = DBreference.Child("achv").Child(StaticData.UserID).Child("username").SetValueAsync(StaticData.username);
+
+                yield return new WaitUntil(predicate: () => DBTaskUpdUsername.IsCompleted);
+            }
+        }
+
+        StaticData.Score = 0;
+        StaticData.Deaths = 0;
+        StaticData.Kills = 0;
+        _update = true;
+    }
+
     private IEnumerator UpdateScore(int _score)
     {
 
@@ -280,7 +357,7 @@ public class FirebaseManager : MonoBehaviour
         }
         else
         {
-            //Xp is now updated
+            //Score is now updated
         }
     }
 
@@ -337,7 +414,7 @@ public class FirebaseManager : MonoBehaviour
     private IEnumerator LoadScoreboardData()
     {
         Debug.Log("LoadScoreboardData");
-        //Get all the users data ordered by kills amount
+        //Get all the users data ordered by score amount
         var DBTask = DBreference.Child("users").OrderByChild("score").GetValueAsync();
 
 
@@ -377,6 +454,37 @@ public class FirebaseManager : MonoBehaviour
             UIManager.instance.showScoreBoard();
         }
     }
+
+    private IEnumerator LoadUserData()
+    {
+        //Get the currently logged in user data
+        var DBTask = DBreference.Child("achv").Child(StaticData.UserID).GetValueAsync();
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else if (DBTask.Result.Value == null)
+        {
+            //No data exists yet
+            scoreField.text = "No Data";
+            killsField.text = "No Data";
+            deathsField.text = "No Data";
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            usernameField.text = snapshot.Child("username").Value.ToString();
+            scoreField.text = snapshot.Child("score").Value.ToString();
+            killsField.text = snapshot.Child("kills").Value.ToString();
+            deathsField.text = snapshot.Child("deaths").Value.ToString();
+        }
+    }
+
     //new method that stores everything from database to ACHIEVEMENT CLASS, adding everything to ac LIST
     public async void AchivsAsync()
     {

@@ -14,6 +14,14 @@ public static class StaticData
     private static int _kills;
     private static int _deaths;
     private static string _username;
+    private static string _userID;
+
+    public static string UserID
+    {
+        get { return _userID; }
+        set { _userID = value; }
+    }
+
 
     public static int Score
     {
