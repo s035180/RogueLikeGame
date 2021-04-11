@@ -1,0 +1,107 @@
+﻿@page "/leaderboard"
+
+@using WebApp.Data
+@inject LeaderboardService LeaderboardService
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+    .sort-th {
+        cursor: pointer;
+    }
+
+    .fa {
+        float: right;
+    }
+</style>
+
+<h1>Leaderboard</h1>
+
+@if (lb == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="sort-th" @onclick="@(() => SortTable("username"))">
+                Username
+                <span class="fa @(SetSortIcon("username"))"></span>
+            </th>
+            <th class="sort-th" @onclick="@(() => SortTable("score"))">
+                Score
+                <span class="fa @(SetSortIcon("score"))"></span>
+            </th>
+            <th class="sort-th" @onclick="@(() => SortTable("kills"))">
+                Kills
+                <span class="fa @(SetSortIcon("kills"))"></span>
+            </th>
+            <th class="sort-th" @onclick="@(() => SortTable("deaths"))">
+                Deaths
+                <span class="fa @(SetSortIcon("deaths"))"></span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var forecast in lb)
+        {
+            <tr>
+                <td>@forecast.username</td>
+                <td>@forecast.score</td>
+                <td>@forecast.kills</td>
+                <td>@forecast.deaths</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+
+@code {
+    private List<Leaderboard> lb;
+
+    protected override async Task OnInitializedAsync()
+    {
+        lb = await LeaderboardService.GetLeaderboardAsync();
+    }
+
+    private bool isSortedAscending;
+    private string activeSortColumn;
+    private void SortTable(string columnName)
+    {
+        if (columnName != activeSortColumn)
+        {
+            lb = lb.OrderBy(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            isSortedAscending = true;
+            activeSortColumn = columnName;
+        }
+        else
+        {
+            if (isSortedAscending)
+            {
+                lb = lb.OrderByDescending(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            }
+            else
+            {
+                lb = lb.OrderBy(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            }
+            isSortedAscending = !isSortedAscending;
+        }
+    }
+    private string SetSortIcon(string columnName)
+    {
+        if (activeSortColumn != columnName)
+        {
+            return string.Empty;
+        }
+        if (isSortedAscending)
+        {
+            return "fa-sort-up";
+        }
+        else
+        {
+            return "fa-sort-down";
+        }
+    }
+}
