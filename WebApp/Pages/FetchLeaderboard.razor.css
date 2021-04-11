@@ -1,0 +1,17 @@
+﻿h1{
+    color: dodgerblue;
+    font-size:xx-large;
+    font-family:'Comic Sans MS';
+    margin-bottom: 30px;
+}
+thead {
+    font-size: x-large;
+    font: bold;
+}
+table {
+    background-color: #FFFAFA;
+    color: Highlight;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
