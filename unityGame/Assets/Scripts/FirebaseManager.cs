@@ -10,6 +10,8 @@ using System.Linq;
 using System;
 using Firebase.Firestore;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -44,12 +46,15 @@ public class FirebaseManager : MonoBehaviour
     public TMP_InputField deathsField;
     public GameObject scoreElement;
     public Transform scoreboardContent;
-    public GameObject Achievements;
+    public Achievements achiv;
+    public GameObject scoreElementAchievements;
+    public Transform achivementsContent;
 
     string curTime;
     public List<Achievements> achivs = new List<Achievements>();
 
     private bool _update = true;
+
 
     void Awake()
     {
@@ -96,6 +101,7 @@ public class FirebaseManager : MonoBehaviour
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
         //Setting reference to FIREBASE FIRESTORE
         db = FirebaseFirestore.DefaultInstance;
+        
 
     }
     public void ClearLoginFeilds()
@@ -188,7 +194,7 @@ public class FirebaseManager : MonoBehaviour
             Debug.Log(User.UserId);
 
             yield return new WaitForSeconds(1);
-
+            AchivsAsync();
             //usernameField.text = User.DisplayName;
             UIManager.instance.showMain();
             confirmLoginText.text = "";
@@ -440,9 +446,9 @@ public class FirebaseManager : MonoBehaviour
             foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse<DataSnapshot>())
             {
                 string username = childSnapshot.Child("username").Value.ToString();
-                int kills = int.Parse(childSnapshot.Child("kills").Value.ToString());
-                int deaths = int.Parse(childSnapshot.Child("deaths").Value.ToString());
-                int score = int.Parse(childSnapshot.Child("score").Value.ToString());
+                string kills = childSnapshot.Child("kills").Value.ToString();
+                string deaths = childSnapshot.Child("deaths").Value.ToString();
+                string score = childSnapshot.Child("score").Value.ToString();
 
                 //Instantiate new scoreboard elements
                 GameObject scoreboardElement = Instantiate(scoreElement, scoreboardContent);
@@ -451,7 +457,6 @@ public class FirebaseManager : MonoBehaviour
             }
 
             //Go to scoareboard screen
-            UIManager.instance.showScoreBoard();
         }
     }
 
@@ -488,17 +493,96 @@ public class FirebaseManager : MonoBehaviour
     //new method that stores everything from database to ACHIEVEMENT CLASS, adding everything to ac LIST
     public async void AchivsAsync()
     {
+        foreach (Transform child in scoreboardContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
         Firebase.Firestore.Query capitalQuery = db.Collection("Achievements");
         QuerySnapshot capitalQuerySnapshot = await capitalQuery.GetSnapshotAsync();
         foreach (DocumentSnapshot documentSnapshot in capitalQuerySnapshot.Documents)
         {
-            Achievements ac = new Achievements();
-            ac.achievementName = $"{documentSnapshot.Reference.Path}: {documentSnapshot.GetValue<string>("Achievement Name")}";
-            ac.achievementType = $"{documentSnapshot.Reference.Path}: {documentSnapshot.GetValue<string>("Complete Task")}";
-            ac.value = Convert.ToInt32($"{documentSnapshot.Reference.Path}: {documentSnapshot.GetValue<int>("Value")}");
-            ac.unlocked = false;
-            achivs.Add(ac);
+            string achievementName = $"{documentSnapshot.GetValue<string>("Achievement Name")}";
+            string achievementType = $"{documentSnapshot.GetValue<string>("Complete Task")}";
+            string value = ($"{documentSnapshot.GetValue<int>("Value")}").ToString();
+            string unlocked = false.ToString();
+            achiv = gameObject.AddComponent<Achievements>();
+            achiv.NewAchivElement(achievementName, achievementType, Convert.ToInt32(value), Convert.ToBoolean(unlocked));
+            StaticData.achivsSet = achiv;
+            
         }
+        AchievementsShow();
+        
 
     }
+
+    public void AchievementsShow()
+    {
+        foreach (Transform child in achivementsContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (var item in StaticData.achivsGet)
+            {
+                GameObject scoreboardElement = Instantiate(scoreElementAchievements, achivementsContent);
+                
+                 StartCoroutine(LoadUserStats());
+
+
+
+                if (StaticData.snapy != null)
+                {
+                    if (Convert.ToInt32(StaticData.snapy.Child(item.achievementType).Value) >= item.value)
+                    {
+                        scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(item.achievementName, item.achievementType, item.value.ToString(), "true");
+                    }
+                    else
+                    {
+                        scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(item.achievementName, item.achievementType, item.value.ToString(), "false");
+                    }
+                }
+                else
+                {
+
+                    scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(item.achievementName, item.achievementType, item.value.ToString(), item.unlocked.ToString());
+                }
+            
+            }
+        
+    }
+    private IEnumerator LoadUserStats()
+    {
+        Debug.Log("Enterting the tunnel");
+        //Get the currently logged in user data
+        var DBTask = DBreference.Child("achv").Child(StaticData.UserID).GetValueAsync();
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+            Debug.Log("Exiting the tunnel from first if");
+
+
+        }
+        else if (DBTask.Result.Value == null)
+        {
+            Debug.Log("Exiting the tunnel from second else if");
+
+
+        }
+        else
+        {
+            //Data has been retrieved
+            Debug.Log("Exiting the tunnel from third else");
+            StaticData.snapy = DBTask.Result;
+
+            
+
+/*            usernameField.text = snapshot.Child("username").Value.ToString();
+            scoreField.text = snapshot.Child("score").Value.ToString();
+            killsField.text = snapshot.Child("kills").Value.ToString();
+            deathsField.text = snapshot.Child("deaths").Value.ToString();*/
+        }
+    }
+    
+
+
 }

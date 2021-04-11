@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Firebase.Database;
+using System.Collections.Generic;
+using UnityEngine;
 
 public static class StaticData
 {
@@ -15,6 +17,26 @@ public static class StaticData
     private static int _deaths;
     private static string _username;
     private static string _userID;
+    private static List<Achievements> _achivs = new List<Achievements>();
+    private static DataSnapshot _snapy;
+
+    public static DataSnapshot snapy
+    {
+        get { return _snapy; }
+        set { _snapy = value; }
+    }
+
+
+    public static Achievements achivsSet
+    {
+        set { _achivs.Add(value); }
+    }
+    public static List<Achievements> achivsGet
+    {
+        get { return _achivs; }
+
+    }
+
 
     public static string UserID
     {

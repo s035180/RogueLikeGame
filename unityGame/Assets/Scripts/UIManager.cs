@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject mainUI;
     public GameObject scoreboardUI;
     public GameObject userDataUI;
+    public GameObject achivementUI;
 
     public TMP_Text warningLoginText;
     public TMP_Text confirmLoginText;
@@ -73,6 +74,12 @@ public class UIManager : MonoBehaviour
         mainUI.SetActive(false);
         scoreboardUI.SetActive(true);
     }
+    public void showAchievement()
+    {
+        Debug.Log("Achievement");
+        mainUI.SetActive(false);
+        achivementUI.SetActive(true);
+    }
 
     public void showUserData()
     {
@@ -88,6 +95,7 @@ public class UIManager : MonoBehaviour
         registerUI.SetActive(false);
         userDataUI.SetActive(false);
         scoreboardUI.SetActive(false);
+        achivementUI.SetActive(false);
         mainUI.SetActive(true);
     }
 }

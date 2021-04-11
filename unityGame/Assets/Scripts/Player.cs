@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     Vector2 movement;
     public LayerMask moveLayerMask;
     public Slider slider;
+    private bool deds = true;
 
     private void Start()
     {
@@ -24,8 +25,10 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if(curHp < 0)
+        
+        if(curHp < 0 && deds)
         {
+            deds = false;
             StaticData.Deaths++;
             animator.SetBool("death", true);
             /* Vitalij Gurin */

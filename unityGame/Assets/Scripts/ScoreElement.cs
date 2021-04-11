@@ -11,7 +11,7 @@ public class ScoreElement : MonoBehaviour
     public TMP_Text deathsText;
     public TMP_Text scoreText;
 
-    public void NewScoreElement(string _username, int _kills, int _deaths, int _score)
+    public void NewScoreElement(string _username, string _kills, string _deaths, string _score)
     {
         usernameText.text = _username;
         killsText.text = _kills.ToString();

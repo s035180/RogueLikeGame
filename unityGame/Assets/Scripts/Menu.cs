@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
     public GameObject mainUI;
     public GameObject scoreboardUI;
     public GameObject userDataUI;
+    public GameObject achievementtUI;
     public void endGame()
     {
         Debug.Log("QUIT");
@@ -25,7 +26,12 @@ public class Menu : MonoBehaviour
         mainUI.SetActive(false);
         scoreboardUI.SetActive(true);
     }
-
+    public void showAchievements()
+    {
+        Debug.Log("Achivs");
+        mainUI.SetActive(false);
+        achievementtUI.SetActive(true);
+    }
     public void showUserData()
     {
         Debug.Log("User Data");
@@ -38,6 +44,7 @@ public class Menu : MonoBehaviour
         Debug.Log("User Data");
         userDataUI.SetActive(false);
         scoreboardUI.SetActive(false);
+        achievementtUI.SetActive(false);
         mainUI.SetActive(true);
     }
 
