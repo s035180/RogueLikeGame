@@ -1,46 +1,56 @@
 ﻿@page "/fetchdata"
 
 @using WebApp.Data
-@inject WeatherForecastService ForecastService
+@inject IJSRuntime JSRuntime
 
-<h1>Weather forecast</h1>
+<h1>Contacts</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
+<h2>Developers</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="sort-th">
+                Name
+            </th>
+            <th class="sort-th">
+                Surname
+            </th>
+            <th class="sort-th">
+                Email
+            </th>
+            <th class="sort-th">
+                Phone Number
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ruslan</td>
+            <td>Nosko</td>
+            <td>noskoruslan1999@gmail.com</td>
+            <td>+3706858565</td>
+        </tr>
+        <tr>
+            <td>Vitalij</td>
+            <td>Gagurin</td>
+            <td>VitalijGagurin@gmail.com</td>
+            <td>+37064781180</td>
+        </tr>
+    </tbody>
+</table>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<h3>Address</h3>
+<p>
+    Our team doesn’t have physical address since we are a virtual
+    team that uses “Discord” application to communicate and “github”
+    web-service to share code. Despite the fact that our team don’t have physical address
+    you still can contact us via email which is provided above, you can use in game bug report system to provide us the
+    information about bugs/errors in the game or find us in Vilnius Kolegija Elektronikos ir Informatikos fakultetas.
+</p>
 
-@code {
-    private WeatherForecast[] forecasts;
 
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-}
+<h4>Support</h4>
+<p>You can also support our project by donating:</p>
+<p>Kiwi:3865489JokingYouShouldn't</p>
+<p>Paypal:8865486YouDon'tNeedTo</p>
+

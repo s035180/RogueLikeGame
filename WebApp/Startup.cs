@@ -31,6 +31,9 @@ namespace WebApp
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<LeaderboardService>();
+            services.AddServerSideBlazor().AddHubOptions(config => config.MaximumReceiveMessageSize = 1048576);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

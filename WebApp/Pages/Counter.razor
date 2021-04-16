@@ -1,16 +1,77 @@
 ﻿@page "/counter"
 
-<h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
+<h1>Game Description</h1>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<p>
+    RogueLikeGame is a endless 2D Top-view game where player need to clear stages by killing a certain amout of enemies,
+    but enemies doesn't always spawn near player so you have to find them in the game generated labyrinths.
 
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-}
+</p>
+<img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/labyrinth.png?alt=media&token=e40cc6c2-3564-4c0f-bee2-9e9f50cd936f" alt="Labyrinth">
+<p></p>
+<p>
+    You will play as a medieval ages hero. Your arsenal consists of Health Bar which represents how much
+    health points does player have, obviously if health bar is at 0, player dies and Attack Indicator 
+    which lets you know when you can attack.
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Hero.png?alt=media&token=003725f0-d5ac-400c-aec3-718718368138" alt="Hero">
+            </th>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Healthbar.png?alt=media&token=210d12a8-77f0-4248-a1c7-5e134d5d9183" alt="HealthBar">
+            </th>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Attack.png?alt=media&token=a21d42b9-f73f-468d-ac3b-067f7a01b0fa" alt="Attack Indicator">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hero</td>
+            <td>Health Bar</td>
+            <td>Attack Indicator</td>
+        </tr>
+    </tbody>
+</table>
+<p></p>
+<p>There are 4 types of enemies in the game, each one has unique sprites and animations. Each new level will spawn enemy type
+    frin the previous level and add a new one to the list.
+ </p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Skeleton.png?alt=media&token=5a872ea5-200f-4d78-9164-d7c3be70d595" alt="Skeleton">
+            </th>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/idle.png?alt=media&token=b561e30e-2aa5-4aac-a6cf-4d6d5d77e900" alt="Bat">
+            </th>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/shroom.png?alt=media&token=8f8fd9d8-01f0-4ad5-858c-540c9628df2f" alt="Shroom">
+            </th>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Goblin.png?alt=media&token=1ca067d7-039a-4c52-917f-fa3296af3a5f" alt="Goblin">
+            </th>
+        </tr>
+    </thead>
+</table>
+<p></p>
+<p>Also game includes Achievement system and ScoreBoard so you can compete against other people
+    Achievement system is only available to the autherized players in the game while ScoreBoard
+    you can see in our website or in the game.</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Scoreboard.png?alt=media&token=d86fb7e5-4c26-48fb-aaeb-fb8fc34f9b1c" alt="Score">
+            </th>
+            <th class="sort-th">
+                <img src="https://firebasestorage.googleapis.com/v0/b/roguelikegame-64f8f.appspot.com/o/Achieves.png?alt=media&token=9ea82f0f-a2a7-4efd-a6c9-5499f757a48e" alt="Achiv">
+            </th>
+        </tr>
+    </thead>
+</table>
