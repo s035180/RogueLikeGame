@@ -1,0 +1,38 @@
+﻿ttbody {
+    color: dodgerblue;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+    margin-left: 500px;
+    text-align: center;
+}
+h1 {
+    color: black;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+
+thead {
+    font-size: x-large;
+    font: bold;
+}
+
+table {
+    background-color: #FFFAFA;
+    color: Highlight;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+p {
+    color: dodgerblue;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+a {
+    color: darkred;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}

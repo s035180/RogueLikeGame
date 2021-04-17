@@ -13,91 +13,83 @@ namespace WebApp.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 1 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 2 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 3 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 4 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 5 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 6 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 7 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 8 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 9 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using WebApp;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\_Imports.razor"
+#line 10 "D:\unitySave\unityGit\RogueLikeGame\WebApp\_Imports.razor"
 using WebApp.Shared;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\Pages\FetchData.razor"
-using WebApp.Data;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Information")]
+    public partial class Information : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -1,8 +1,40 @@
-/* _content/WebApp/Pages/FetchLeaderboard.razor.rz.scp.css */
-h1[b-itc7h5egit]{
+/* _content/WebApp/Pages/Contacts.razor.rz.scp.css */
+h1[b-a8p09g3coh] {
+    color: black;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+h2[b-a8p09g3coh] {
+    color: black;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+
+thead[b-a8p09g3coh] {
+    font-size: x-large;
+    font: bold;
+}
+
+table[b-a8p09g3coh] {
+    background-color: #FFFAFA;
+    color: Highlight;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+p[b-a8p09g3coh] {
     color: dodgerblue;
-    font-size:xx-large;
-    font-family:'Comic Sans MS';
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+/* _content/WebApp/Pages/FetchLeaderboard.razor.rz.scp.css */
+h1[b-itc7h5egit] {
+    color: black;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
     margin-bottom: 30px;
 }
 thead[b-itc7h5egit] {
@@ -16,6 +48,71 @@ table[b-itc7h5egit] {
     text-align: center;
 }
 
+/* _content/WebApp/Pages/Index.razor.rz.scp.css */
+ttbody[b-8nt4pwf2vu] {
+    color: dodgerblue;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+    margin-left: 500px;
+    text-align: center;
+}
+h1[b-8nt4pwf2vu] {
+    color: black;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+
+thead[b-8nt4pwf2vu] {
+    font-size: x-large;
+    font: bold;
+}
+
+table[b-8nt4pwf2vu] {
+    background-color: #FFFAFA;
+    color: Highlight;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+p[b-8nt4pwf2vu] {
+    color: dodgerblue;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+a[b-8nt4pwf2vu] {
+    color: darkred;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+/* _content/WebApp/Pages/Information.razor.rz.scp.css */
+h1[b-yuevbmj2fs] {
+    color: black;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+
+thead[b-yuevbmj2fs] {
+    font-size: x-large;
+    font: bold;
+}
+
+table[b-yuevbmj2fs] {
+    background-color: #FFFAFA;
+    color: Highlight;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+
+p[b-yuevbmj2fs] {
+    color: dodgerblue;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
 /* _content/WebApp/Shared/MainLayout.razor.rz.scp.css */
 .page[b-snfefjgk3b] {
     position: relative;

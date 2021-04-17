@@ -27,8 +27,6 @@ D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.csproj.CoreCo
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.MvcApplicationPartsAssemblyInfo.cache
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.RazorComponent.input.cache
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
@@ -41,8 +39,6 @@ D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.TagHelpers.in
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.TagHelpers.output.cache
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.RazorCoreGenerate.cache
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\App.razor.g.cs
-D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
@@ -138,3 +134,10 @@ C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.dll
 C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\obj\Debug\net5.0\ref\WebApp.dll
 C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.pdb
 C:\Users\vital\Desktop\Project\RogueLikeGame\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\Information.razor.g.cs
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\Pages\Information.razor.g.cs
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\scopedcss\Pages\Information.razor.rz.scp.css
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\Contacts.razor.g.cs
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\Razor\Pages\Contacts.razor.g.cs
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
+D:\unitySave\unityGit\RogueLikeGame\WebApp\obj\Debug\net5.0\scopedcss\Pages\Contacts.razor.rz.scp.css

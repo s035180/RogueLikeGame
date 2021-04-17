@@ -1,17 +1,25 @@
-h1[b-itc7h5egit] {
+h1[b-yuevbmj2fs] {
     color: black;
     font-size: xx-large;
     font-family: 'Comic Sans MS';
     margin-bottom: 30px;
 }
-thead[b-itc7h5egit] {
+
+thead[b-yuevbmj2fs] {
     font-size: x-large;
     font: bold;
 }
-table[b-itc7h5egit] {
+
+table[b-yuevbmj2fs] {
     background-color: #FFFAFA;
     color: Highlight;
     font-family: 'Comic Sans MS';
     text-align: center;
 }
 
+p[b-yuevbmj2fs] {
+    color: dodgerblue;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}

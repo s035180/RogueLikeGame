@@ -1,0 +1,38 @@
+ttbody[b-8nt4pwf2vu] {
+    color: dodgerblue;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+    margin-left: 500px;
+    text-align: center;
+}
+h1[b-8nt4pwf2vu] {
+    color: black;
+    font-size: xx-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+
+thead[b-8nt4pwf2vu] {
+    font-size: x-large;
+    font: bold;
+}
+
+table[b-8nt4pwf2vu] {
+    background-color: #FFFAFA;
+    color: Highlight;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+}
+p[b-8nt4pwf2vu] {
+    color: dodgerblue;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}
+a[b-8nt4pwf2vu] {
+    color: darkred;
+    font-size: x-large;
+    font-family: 'Comic Sans MS';
+    margin-bottom: 30px;
+}

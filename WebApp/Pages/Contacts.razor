@@ -1,4 +1,4 @@
-﻿@page "/fetchdata"
+﻿@page "/Contacts"
 
 @using WebApp.Data
 @inject IJSRuntime JSRuntime
@@ -39,7 +39,7 @@
     </tbody>
 </table>
 
-<h3>Address</h3>
+<h2>Address</h2>
 <p>
     Our team doesn’t have physical address since we are a virtual
     team that uses “Discord” application to communicate and “github”
@@ -49,8 +49,24 @@
 </p>
 
 
-<h4>Support</h4>
+<h2>Support</h2>
 <p>You can also support our project by donating:</p>
 <p>Kiwi:3865489JokingYouShouldn't</p>
 <p>Paypal:8865486YouDon'tNeedTo</p>
 
+<h2>Our Location</h2>
+<div id="map" style="height:500px;width:100%;">
+</div>
+
+@code{
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initialize", null);
+            StateHasChanged();
+        }
+
+    }
+}

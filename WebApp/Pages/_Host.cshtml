@@ -35,4 +35,19 @@
 </html>
 
 
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+<script>
+    function initialize() {
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid29vZG9vODkiLCJhIjoiY2tubG16cXNjMGgxNjJ1cHJyeHc2cWR5byJ9.B3xhMxj5UsJiCVSG1goeFg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v11',
+            center: [25.26121, 54.689080],
+            zoom: 20
+            
+        });
+
+    }
+</script>
 

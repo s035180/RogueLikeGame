@@ -427,23 +427,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vital\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\gh7891\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vital\\Desktop\\Project\\RogueLikeGame\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "D:\\unitySave\\unityGit\\RogueLikeGame\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\vital\\Desktop\\Project\\RogueLikeGame\\WebApp\\WebApp.csproj",
-      "packagesPath": "C:\\Users\\vital\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vital\\Desktop\\Project\\RogueLikeGame\\WebApp\\obj\\",
+      "projectPath": "D:\\unitySave\\unityGit\\RogueLikeGame\\WebApp\\WebApp.csproj",
+      "packagesPath": "C:\\Users\\gh7891\\.nuget\\packages\\",
+      "outputPath": "D:\\unitySave\\unityGit\\RogueLikeGame\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\vital\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gh7891\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -497,7 +500,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
