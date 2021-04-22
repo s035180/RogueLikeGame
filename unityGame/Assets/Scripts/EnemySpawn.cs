@@ -7,7 +7,7 @@ public class EnemySpawn : MonoBehaviour
 {
     // Start is called before the first frame update
     int minEnemies = 1;
-    int maxEnemies = 1;
+    int maxEnemies = 100;
     public GameObject[] level1;
     public GameObject[] level2;
     public GameObject[] level3;
